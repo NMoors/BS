@@ -16,7 +16,7 @@ int main(){
 	while (1)
 	{
 		re =read(fileno(stdin), buf, sizeof(buf));
-		if(strncmp("eof", buf, 3) == 0 || re ==0 ) 
+		if(strncmp("exit", buf, 4) == 0 || re ==0 ) 
 		{
 			close(fd);
 			printf("Eingaben nach Datei.txt eingelesen.\n");

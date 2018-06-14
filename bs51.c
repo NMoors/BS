@@ -15,7 +15,7 @@ int main(void)
 		re =read(fileno(stdin), buf, sizeof(buf)); 
 		fprintf(stderr, "eingelesen: %d Zeichen\nAusgabe über stdout: ", re );
 		// aus schleife gehen sobald eof
-		if(strncmp("exit", buf, 3) == 0 || re ==0 ) return(0);
+		if(strncmp("exit", buf, 4) == 0 || re ==0 ) return(0);
 		wr = write(fileno(stdout), buf, sizeof(buf));
 	}
 	return(1);
