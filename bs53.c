@@ -23,7 +23,7 @@ int main()
 		while(1){
 			//von pp lesen
 			re = read(pfd[0], buf, sizeof(buf));
-			wr = write(fileno(stdout), buf, sizeof(buf));
+			wr = write(fileno(stdout), buf, re);
 			printf ("Kind: %d\n", re);
 			if(re == 0 || strncmp(buf, "exit", 4) == 0) {
 				printf("Kind terminiert\n");
@@ -40,7 +40,7 @@ int main()
 	while(1)
 	{
 		re =read(fileno(stdin), buf, sizeof(buf)); 
-		wr = write(pfd[1], buf, sizeof(buf));
+		wr = write(pfd[1], buf, re);
 		printf ("Parent: %d\n", wr);
 		if(re == 0 || strncmp(buf, "exit", 4) == 0) {
 			printf("parent terminiert\n");
